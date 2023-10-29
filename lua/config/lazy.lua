@@ -1,5 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.python3_host_prog = '/usr/local/bin/python'
 vim.cmd('set relativenumber')
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
