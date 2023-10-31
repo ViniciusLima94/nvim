@@ -8,9 +8,10 @@ vim.keymap.set("n", "<M-j>", ":m .+1<CR>==", {})
 vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv", {})
 vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv",{} )
 
--- Add your custom key mapping
+-- Send the block of code to the terminal
 vim.api.nvim_set_keymap('n', '<leader>sa', [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
-
+--Send the line of code to the terminal
+vim.api.nvim_set_keymap('n', '<leader>sl', [[:call jukit#send#line()<CR>]], { noremap = true, silent = true })
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })

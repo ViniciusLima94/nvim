@@ -1,5 +1,5 @@
 -- mapleader linked to space
-vim.g.mapleader = ' '
+vim.g.mapleader = ' ' -- Set <Leader> to the Space key
 --write code here
 vim.g.maplocalleader = ' '
 vim.o.clipboard='unnamedplus'
@@ -22,5 +22,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Send the block of code to the terminal
+vim.api.nvim_set_keymap('n', '<leader>sa', [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
+--Send the line of code to the terminal
+vim.api.nvim_set_keymap('n', '<leader>sl', [[:call jukit#send#line()<CR>]], { noremap = true, silent = true })
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
