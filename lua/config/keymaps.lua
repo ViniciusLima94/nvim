@@ -17,6 +17,9 @@ vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv", {})
 vim.api.nvim_set_keymap("n", "<leader>ss", [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
 --Send the line of code to the terminal
 vim.api.nvim_set_keymap("n", "<leader>sa", [[:call jukit#send#line()<CR>]], { noremap = true, silent = true })
+--gitlazy keymap
+vim.api.nvim_set_keymap("n", "<Leader>gg", [[:LazyGit<CR>]], { noremap = true, silent = true })
+--telescope
 -- See `:help telescope.builtin`
 vim.keymap.set("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
 vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
@@ -27,7 +30,6 @@ vim.keymap.set("n", "<leader>/", function()
 		previewer = false,
 	}))
 end, { desc = "[/] Fuzzily search in current buffer" })
-
 vim.keymap.set("n", "<leader>gf", require("telescope.builtin").git_files, { desc = "Search [G]it [F]iles" })
 vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
 vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
