@@ -1,5 +1,10 @@
+-- Navigate between split windows with Cmd+h, j, k, l
+vim.api.nvim_set_keymap('n', '<S-h>', '<C-W>h', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-j>', '<C-W>j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-k>', '<C-W>k', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-l>', '<C-W>l', { noremap = true, silent = true })
 -- Generals Keymaps
--- Left Explorer Toggle 
+-- Left Explorer Togglu 
 vim.keymap.set('n','<leader>e',':Lexplore15<CR>')
 -- Move text up and down
 vim.keymap.set("n", "<M-k>", ":m .-2<CR>==", {})
@@ -8,10 +13,10 @@ vim.keymap.set("n", "<M-j>", ":m .+1<CR>==", {})
 vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv", {})
 vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv",{} )
 
--- Send the block of code to the terminal
-vim.api.nvim_set_keymap('n', '<leader>sa', [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
+-- Send the senction of code to the terminal
+vim.api.nvim_set_keymap('n', '<leader>ss', [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
 --Send the line of code to the terminal
-vim.api.nvim_set_keymap('n', '<leader>sl', [[:call jukit#send#line()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>sa', [[:call jukit#send#line()<CR>]], {noremap=true, silent = true })
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
@@ -35,3 +40,4 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>o', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set('n','<leader>f', vim.lsp.buf.format, { desc = 'Format the code' })
