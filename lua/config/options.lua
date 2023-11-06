@@ -2,7 +2,7 @@
 vim.g.mapleader = ' ' -- Set <Leader> to the Space key
 --write code here
 vim.g.maplocalleader = ' '
-vim.g.python3_host_prog = '/usr/local/bin/python'
+-- vim.g.python3_host_prog = '/usr/local/bin/python'
 vim.o.clipboard='unnamedplus'
 vim.cmd('set relativenumber')
 vim.o.termguicolors = true
