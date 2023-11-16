@@ -17,6 +17,7 @@ vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv", {})
 vim.api.nvim_set_keymap("n", "<leader>ss", [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
 --Send the line of code to the terminal
 vim.api.nvim_set_keymap("n", "<leader>sa", [[:call jukit#send#line()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>cc", [[:call jukit#send#selection()<cr>]], { noremap = true, silent = true })
 --gitlazy keymap
 vim.api.nvim_set_keymap("n", "<Leader>gg", [[:LazyGit<CR>]], { noremap = true, silent = true })
 --telescope
@@ -45,3 +46,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format the code' })
 -- Key mapping to trigger the Format command
 vim.api.nvim_set_keymap("n", "<Leader>f", [[:Format<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true, silent = true })
+
+
+
