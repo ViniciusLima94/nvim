@@ -9,7 +9,7 @@ return {
 			options = {
 				icons_enabled = true,
 				theme = "auto",
-				component_separators = { left = "", right = "" },
+				component_separators = { left = "", right = ""},
 				section_separators = { left = "", right = "" },
 				disabled_filetypes = {
 					statusline = {},
@@ -27,7 +27,11 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = {
-					{ "branch" },
+					{
+						"branch",
+						icon = "", -- Another custom branch icon
+						color = { bg = "002833", fg = "f86100" },
+					},
 					{
 						"diff",
 						colored = true,
@@ -35,14 +39,18 @@ return {
 							added = "LuaLineDiffAdd", -- Changes the diff's added color
 							modified = "LuaLineDiffChange", -- Changes the diff's modified color
 							removed = "LuaLineDiffDelete",
-							-- Same color values as the general color option can be used here.
-							-- added =  '#00FF00', -- Changes the diff's added color
-							-- modified = '#FFFF00', -- Changes the diff's modified color
-							-- removed = "#ff0000", -- Changes the diff's removed color you
 						},
 						symbols = { added = " ", modified = "柳", removed = " " },
 					},
-					{ "diagnostics" },
+					{
+						"diagnostics",
+						colored = true,
+						diagnostics_color = {
+							error = "LuaLineDiagnosticsError",
+							warn = "LuaLineDiagnosticsWarn",
+							hint = "LuaLineDiagnosticsHint",
+						},
+					},
 				},
 				lualine_c = {
 					"filename",
@@ -69,8 +77,12 @@ return {
 			extensions = {},
 		})
 		-- Define custom highlight groups for diff added, modified, and removed
-		vim.api.nvim_command("highlight LuaLineDiffAdd guifg=#00FF00")
-		vim.api.nvim_command("highlight LuaLineDiffChange guifg=#FFFF00")
-		vim.api.nvim_command("highlight LuaLineDiffDelete guifg=#ff0000")
+		vim.api.nvim_command("highlight LuaLineDiffAdd guifg=#00d133 guibg=#003440")
+		vim.api.nvim_command("highlight LuaLineDiffChange guifg=#c08f34 guibg=#003440")
+		vim.api.nvim_command("highlight LuaLineDiffDelete guifg=#db312f guibg=#003440")
+		-- custom highlight for diagnostics
+		vim.api.nvim_command("highlight LuaLineDiagnosticsError guifg=#db312f guibg=#002833")
+		vim.api.nvim_command("highlight LuaLineDiagnosticsWarn guifg=#c08f34 guibg=#002833")
+		vim.api.nvim_command("highlight LuaLineDiagnosticsHint guifg=#2aa097 guibg=#002833")
 	end,
 }

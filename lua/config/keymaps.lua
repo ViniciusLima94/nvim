@@ -1,7 +1,7 @@
 -- Navigate between split windows with Cmd+h, j, k, l
 -- keymaps.lua
 local map = vim.api.nvim_set_keymap
-local keymap=vim.keymap.set
+local keymap = vim.keymap.set
 -- Mappings for Magma
 map("n", "<LocalLeader>r", ":MagmaEvaluateOperator<CR>", { noremap = true, silent = true, expr = true })
 map("n", "<LocalLeader>rr", ":MagmaEvaluateLine<CR>", { noremap = true, silent = true })
@@ -55,5 +55,18 @@ keymap("n", "<leader>o", vim.diagnostic.open_float, { desc = "Open floating diag
 keymap("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 -- keymap('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format the code' })
 -- Key mapping to trigger the Format command
+map("x", "<leader>p", '"_dP', { noremap = true, silent = true })
+map("x", "<leader>p", '"_dP', { noremap = true, silent = true })
+map("x", "<leader>p", '"_dP', { noremap = true, silent = true })
 map("n", "<Leader>f", [[:Format<CR>]], { noremap = true, silent = true })
-map("n", "n", "nzzzv", { noremap = true, silent = true })
+map("n", "<Leader>f", [[:Format<CR>]], { noremap = true, silent = true })
+--keep the cursor centered when scrolling
+keymap("n", "<C-d>", "<C-d>zz", {})
+keymap("n", "<C-u>", "<C-u>zz", {})
+-- keep the cursor centered when searching
+keymap("n", "n", "nzzzv", {})
+keymap("n", "N", "Nzzzv", {})
+-- Send the block of code to the terminal
+vim.api.nvim_set_keymap("n", "<leader>sa", [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
+--Send the line of code to the terminal
+vim.api.nvim_set_keymap("n", "<leader>sl", [[:call jukit#send#line()<CR>]], { noremap = true, silent = true })
