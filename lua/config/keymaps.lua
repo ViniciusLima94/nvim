@@ -27,6 +27,7 @@ keymap("v", "<M-k>", ":m '<-2<CR>gv=gv", {})
 map("n", "<leader>ss", [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
 --Send the line of code to the terminal
 map("n", "<leader>sa", [[:call jukit#send#line()<CR>]], { noremap = true, silent = true })
+--Send the all code  up to the cell to the terminal
 map("v", "<leader>cc", [[:call jukit#send#selection()<cr>]], { noremap = true, silent = true })
 --gitlazy keymap
 map("n", "<Leader>gg", [[:LazyGit<CR>]], { noremap = true, silent = true })
@@ -66,7 +67,3 @@ keymap("n", "<C-u>", "<C-u>zz", {})
 -- keep the cursor centered when searching
 keymap("n", "n", "nzzzv", {})
 keymap("n", "N", "Nzzzv", {})
--- Send the block of code to the terminal
-vim.api.nvim_set_keymap("n", "<leader>sa", [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
---Send the line of code to the terminal
-vim.api.nvim_set_keymap("n", "<leader>sl", [[:call jukit#send#line()<CR>]], { noremap = true, silent = true })

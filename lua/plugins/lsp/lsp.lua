@@ -67,15 +67,7 @@ return {
 		local servers = {
 			-- clangd = {},
 			-- gopls = {},
-			pyright = {
-				-- settings = {
-				-- 	python = {
-				-- 		formatting = {
-				-- 			provider = "black", -- or any other Python formatter
-				-- 		},
-				-- 	},
-				-- },
-			},
+			pyright = {},
 			-- rust_analyzer = {},
 			tsserver = {},
 			-- html = { filetypes = { 'html', 'twig', 'hbs'} },
