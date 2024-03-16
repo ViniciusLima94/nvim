@@ -57,8 +57,6 @@ keymap("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics l
 -- keymap('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format the code' })
 -- Key mapping to trigger the Format command
 map("x", "<leader>p", '"_dP', { noremap = true, silent = true })
-map("x", "<leader>p", '"_dP', { noremap = true, silent = true })
-map("x", "<leader>p", '"_dP', { noremap = true, silent = true })
 map("n", "<Leader>f", [[:Format<CR>]], { noremap = true, silent = true })
 map("n", "<Leader>f", [[:Format<CR>]], { noremap = true, silent = true })
 --keep the cursor centered when scrolling
