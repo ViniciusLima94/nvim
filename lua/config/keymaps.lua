@@ -22,7 +22,8 @@ keymap("n", "<M-j>", ":m .+1<CR>==", {})
 -- Move block text up and down
 keymap("v", "<M-j>", ":m '>+1<CR>gv=gv", {})
 keymap("v", "<M-k>", ":m '<-2<CR>gv=gv", {})
-
+--Keymaps for nvim tree
+keymap("n", "<leader>l", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 -- Send the senction of code to the terminal
 map("n", "<leader>ss", [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
 --Send the line of code to the terminal
