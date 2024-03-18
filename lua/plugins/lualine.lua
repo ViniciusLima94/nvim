@@ -40,7 +40,10 @@ return {
 							modified = "LuaLineDiffChange", -- Changes the diff's modified color
 							removed = "LuaLineDiffDelete",
 						},
-						symbols = { added = " ", modified = "柳", removed = " " },
+
+						-- symbols = { added = "✔️", modified = "♻️", removed = "❌" },
+						-- symbols = { added = " ", modified = "柳", removed = " " },
+						symbols = { added = " ", modified = "♻️", removed = " " },
 					},
 					{
 						"diagnostics",

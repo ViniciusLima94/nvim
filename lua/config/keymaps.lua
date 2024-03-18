@@ -15,7 +15,7 @@ map("n", "<S-k>", "<C-W>k", { noremap = true, silent = true })
 map("n", "<S-l>", "<C-W>l", { noremap = true, silent = true })
 -- Generals Keymaps
 -- Left Explorer Togglu
-keymap("n", "<leader>e", ":Lexplore15<CR>")
+-- keymap("n", "<leader>e", ":Lexplore15<CR>")
 -- Move text up and down
 keymap("n", "<M-k>", ":m .-2<CR>==", {})
 keymap("n", "<M-j>", ":m .+1<CR>==", {})
@@ -23,7 +23,7 @@ keymap("n", "<M-j>", ":m .+1<CR>==", {})
 keymap("v", "<M-j>", ":m '>+1<CR>gv=gv", {})
 keymap("v", "<M-k>", ":m '<-2<CR>gv=gv", {})
 --Keymaps for nvim tree
-keymap("n", "<leader>l", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 -- Send the senction of code to the terminal
 map("n", "<leader>ss", [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
 --Send the line of code to the terminal
