@@ -9,8 +9,10 @@ return {
 			options = {
 				icons_enabled = true,
 				theme = "auto",
-				component_separators = { left = "", right = ""},
-				section_separators = { left = "", right = "" },
+				component_separators = "",
+				section_separators = { left = "", right = "" },
+				-- component_separators = { left = "", right = "" },
+				-- section_separators = { left = "", right = "" },
 				disabled_filetypes = {
 					statusline = {},
 					winbar = {},
@@ -25,34 +27,34 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = { "mode" },
+				lualine_a = { "mode", separator = { left = "" }, right_padding = 2 },
 				lualine_b = {
 					{
 						"branch",
 						icon = "", -- Another custom branch icon
-						color = { bg = "002833", fg = "f86100" },
+						-- color = { bg = "002833", fg = "f86100" },
 					},
 					{
 						"diff",
-						colored = true,
-						diff_color = {
-							added = "LuaLineDiffAdd", -- Changes the diff's added color
-							modified = "LuaLineDiffChange", -- Changes the diff's modified color
-							removed = "LuaLineDiffDelete",
-						},
+						-- colored = true,
+						-- diff_color = {
+						-- 	added = "LuaLineDiffAdd", -- Changes the diff's added color
+						-- 	modified = "LuaLineDiffChange", -- Changes the diff's modified color
+						-- 	removed = "LuaLineDiffDelete",
+						-- },
 
 						-- symbols = { added = "✔️", modified = "♻️", removed = "❌" },
 						-- symbols = { added = " ", modified = "柳", removed = " " },
-						symbols = { added = " ", modified = "♻️", removed = " " },
+						symbols = { added = " ", modified = "♻️ ", removed = " " },
 					},
 					{
 						"diagnostics",
-						colored = true,
-						diagnostics_color = {
-							error = "LuaLineDiagnosticsError",
-							warn = "LuaLineDiagnosticsWarn",
-							hint = "LuaLineDiagnosticsHint",
-						},
+						-- colored = true,
+						-- diagnostics_color = {
+						-- 	error = "LuaLineDiagnosticsError",
+						-- 	warn = "LuaLineDiagnosticsWarn",
+						-- 	hint = "LuaLineDiagnosticsHint",
+						-- },
 					},
 				},
 				lualine_c = {
@@ -79,13 +81,13 @@ return {
 			inactive_winbar = {},
 			extensions = {},
 		})
-		-- Define custom highlight groups for diff added, modified, and removed
-		vim.api.nvim_command("highlight LuaLineDiffAdd guifg=#00d133 guibg=#003440")
-		vim.api.nvim_command("highlight LuaLineDiffChange guifg=#c08f34 guibg=#003440")
-		vim.api.nvim_command("highlight LuaLineDiffDelete guifg=#db312f guibg=#003440")
-		-- custom highlight for diagnostics
-		vim.api.nvim_command("highlight LuaLineDiagnosticsError guifg=#db312f guibg=#002833")
-		vim.api.nvim_command("highlight LuaLineDiagnosticsWarn guifg=#c08f34 guibg=#002833")
-		vim.api.nvim_command("highlight LuaLineDiagnosticsHint guifg=#2aa097 guibg=#002833")
+		-- -- Define custom highlight groups for diff added, modified, and removed
+		-- vim.api.nvim_command("highlight LuaLineDiffAdd guifg=#00d133 guibg=#003440")
+		-- vim.api.nvim_command("highlight LuaLineDiffChange guifg=#c08f34 guibg=#003440")
+		-- vim.api.nvim_command("highlight LuaLineDiffDelete guifg=#db312f guibg=#003440")
+		-- -- custom highlight for diagnostics
+		-- vim.api.nvim_command("highlight LuaLineDiagnosticsError guifg=#db312f guibg=#002833")
+		-- vim.api.nvim_command("highlight LuaLineDiagnosticsWarn guifg=#c08f34 guibg=#002833")
+		-- vim.api.nvim_command("highlight LuaLineDiagnosticsHint guifg=#2aa097 guibg=#002833")
 	end,
 }

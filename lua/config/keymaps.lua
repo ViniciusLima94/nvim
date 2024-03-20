@@ -2,13 +2,6 @@
 -- keymaps.lua
 local map = vim.api.nvim_set_keymap
 local keymap = vim.keymap.set
--- Mappings for Magma
-map("n", "<LocalLeader>r", ":MagmaEvaluateOperator<CR>", { noremap = true, silent = true, expr = true })
-map("n", "<LocalLeader>rr", ":MagmaEvaluateLine<CR>", { noremap = true, silent = true })
-map("x", "<LocalLeader>r", ":<C-u>MagmaEvaluateVisual<CR>", { noremap = true, silent = true })
-map("n", "<LocalLeader>rc", ":MagmaReevaluateCell<CR>", { noremap = true, silent = true })
-map("n", "<LocalLeader>rd", ":MagmaDelete<CR>", { noremap = true, silent = true })
-map("n", "<LocalLeader>ro", ":MagmaShowOutput<CR>", { noremap = true, silent = true })
 map("n", "<S-h>", "<C-W>h", { noremap = true, silent = true })
 map("n", "<S-j>", "<C-W>j", { noremap = true, silent = true })
 map("n", "<S-k>", "<C-W>k", { noremap = true, silent = true })
