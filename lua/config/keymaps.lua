@@ -10,11 +10,11 @@ map("n", "<C-l>", "<C-W>l", { noremap = true, silent = true })
 -- Left Explorer Togglu
 -- keymap("n", "<leader>e", ":Lexplore15<CR>")
 -- Move text up and down
-keymap("n", "<S-j>", ":m .+1<CR>==", { noremap = true, silent = true})
-keymap("n", "<S-k>", ":m .-2<CR>==", { noremap = true, silent = true})
+keymap("n", "<S-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+keymap("n", "<S-k>", ":m .-2<CR>==", { noremap = true, silent = true })
 -- Move block text up and down
-keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true})
-keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true})
+keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 --Keymaps for nvim tree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 -- Send the section of code to the terminal
