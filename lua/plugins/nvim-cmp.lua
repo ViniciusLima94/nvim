@@ -2,7 +2,7 @@ return {
 	-- Autocompletion
 	"hrsh7th/nvim-cmp",
 	dependencies = {
-		-- Snippet Engine & its associated nvim-cmp source
+		"jmbuhr/cmp-pandoc-references", -- Snippet Engine & its associated nvim-cmp source
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 
@@ -58,11 +58,12 @@ return {
 			}),
 			sources = {
 				{ name = "copilot", group_index = 2 },
-				-- Other Sources
+				-- Other Sources{ name = 'pandoc_references' }
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
+				{ name = "pandoc_references" },
 			},
 		})
 	end,

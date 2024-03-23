@@ -25,8 +25,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
--- Conceal level for obsidian
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 2
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
