@@ -2,7 +2,7 @@
 My full customized nvim configuration, for mac OS.
 
 # Colorscheme:
-catpussicn colorscheme is used.
+catpuccin colorscheme is used.
 
 # LSP
 Mason is used to install all the necessary LSP: python, javascript, lua, markdown
@@ -18,7 +18,7 @@ Github copilot for coding.
 Best plugin for autompletion.
 
 ## Lazygit:
-Git pluging to push/pull/commit any changes into github pretty fast.
+Git pluging with integrated push/pull/commit commands.
 
 ## Autopairs:
 Create pairs of symbols like brackets during typing. Very helpful.

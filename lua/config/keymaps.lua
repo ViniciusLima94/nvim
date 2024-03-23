@@ -3,18 +3,18 @@
 local map = vim.api.nvim_set_keymap
 local keymap = vim.keymap.set
 map("n", "<C-h>", "<C-W>h", { noremap = true, silent = true })
--- map("n", "<C-j>", "<C-W>j", { noremap = true, silent = true })
--- map("n", "<C-k>", "<C-W>k", { noremap = true, silent = true })
+map("n", "<C-j>", "<C-W>j", { noremap = true, silent = true })
+map("n", "<C-k>", "<C-W>k", { noremap = true, silent = true })
 map("n", "<C-l>", "<C-W>l", { noremap = true, silent = true })
 -- Generals Keymaps
 -- Left Explorer Togglu
 -- keymap("n", "<leader>e", ":Lexplore15<CR>")
 -- Move text up and down
-keymap("n", "<S-j>", ":m .+1<CR>==", { noremap = true, silent = true })
-keymap("n", "<S-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+keymap("n", "<M-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+keymap("n", "<M-k>", ":m .-2<CR>==", { noremap = true, silent = true })
 -- Move block text up and down
-keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
-keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+keymap("v", "<M-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+keymap("v", "<M-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 --Keymaps for nvim tree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 -- Send the section of code to the terminal
@@ -58,3 +58,13 @@ keymap("n", "<C-u>", "<C-u>zz", {})
 -- keep the cursor centered when searching
 keymap("n", "n", "nzzzv", {})
 keymap("n", "N", "Nzzzv", {})
+
+-- Keymaps for Obsidian:
+keymap('n',"<leader>nn",[[:ObsidianNew<CR>]])
+keymap('n',"<leader>ot",[[:ObsidianTemplate<CR>]])
+keymap('n',"<leader>gn",[[:ObsidianSearch<CR>]],{desc="[G]rep [N]otes"})
+keymap('n',"<leader>oqs",[[:ObsidianQuickSwitch<CR>]])
+keymap('n',"<leader>bl",[[:ObsidianBacklinks<CR>]])
+
+
+
