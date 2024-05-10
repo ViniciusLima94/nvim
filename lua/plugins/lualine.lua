@@ -49,7 +49,7 @@ return {
 					},
 					{
 						"diagnostics",
-						-- colored = true,
+						colored = true,
 						-- diagnostics_color = {
 						-- 	error = "LuaLineDiagnosticsError",
 						-- 	warn = "LuaLineDiagnosticsWarn",

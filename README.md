@@ -1,24 +1,32 @@
-# Neovim Configuration:
-My full customized nvim configuration, for mac OS.
+ # Neovim Configuration: (for macOS)
+
+This repository contains my fully customized Neovim configuration.
+
+---
 
 # Colorscheme:
-catpuccin colorscheme is used.
+I utilize the catpuccin colorscheme for an appealing visual experience.
 
-# LSP
-Mason is used to install all the necessary LSP: python, javascript, lua, markdown
+---
 
-# Important plugins:
+# LSP (Language Servers Protocol):
+Mason is employed to manage and install all necessary LSP servers, including python, JavaScript, Lua, and Markdown.
+
+---
+
+# Essential Plugins:
+
 ## Telescope:
-Telescope is the best fuzzy finder I found so far. Allows very fast navigation.
+A powerful, versatile fuzzy finder that offers quick navigation.
 
 ## Copilot:
-Github copilot for coding.
+Leverages GitHub's Copilot for enhanced coding capabilities.
 
 ## Treesitter:
-Best plugin for autompletion.
+Delivers exceptional autocompletion functionality.
 
 ## Lazygit:
-Git pluging with integrated push/pull/commit commands.
+Integrated Git plugin, enabling push/pull/commit commands within Neovim.
 
 ## Autopairs:
-Create pairs of symbols like brackets during typing. Very helpful.
+Automatically generates and completes symbol pairs like brackets as you type.

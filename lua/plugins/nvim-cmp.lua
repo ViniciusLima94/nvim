@@ -65,6 +65,9 @@ return {
 				{ name = "path" },
 				{ name = "pandoc_references" },
 			},
+			experimental= {
+				ghost_text = true,
+			},
 		})
 	end,
 }

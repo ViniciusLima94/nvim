@@ -1,5 +1,5 @@
--- Navigate between split windows with Cmd+h, j, k, l
 -- keymaps.lua
+-- Navigate between split windows with Cmd+h, j, k, l
 local map = vim.api.nvim_set_keymap
 local keymap = vim.keymap.set
 map("n", "<C-h>", "<C-W>h", { noremap = true, silent = true })
@@ -10,13 +10,14 @@ map("n", "<C-l>", "<C-W>l", { noremap = true, silent = true })
 -- Left Explorer Togglu
 -- keymap("n", "<leader>e", ":Lexplore15<CR>")
 -- Move text up and down
-keymap("n", "<M-j>", ":m .+1<CR>==", { noremap = true, silent = true })
-keymap("n", "<M-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+keymap("n", "<S-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+keymap("n", "<S-k>", ":m .-2<CR>==", { noremap = true, silent = true })
 -- Move block text up and down
-keymap("v", "<M-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
-keymap("v", "<M-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 --Keymaps for nvim tree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>t", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+-- keymap("n", "<leader>e", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
 -- Send the section of code to the terminal
 map("n", "<leader>ss", [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
 --Send the line of code to the terminal
@@ -29,13 +30,13 @@ map("n", "<Leader>gg", [[:LazyGit<CR>]], { noremap = true, silent = true })
 -- See `:help telescope.builtin`
 keymap("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
 keymap("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
-keymap("n", "<leader>/", function()
+keymap(
+	"n",
+	"<leader>/",
 	-- You can pass additional configuration to telescope to change theme, layout, etc.
-	require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-		winblend = 10,
-		previewer = false,
-	}))
-end, { desc = "[/] Fuzzily search in current buffer" })
+	require("telescope.builtin").current_buffer_fuzzy_find,
+	{ desc = "[/] Fuzzily search in current buffer" }
+)
 keymap("n", "<leader>gf", require("telescope.builtin").git_files, { desc = "Search [G]it [F]iles" })
 keymap("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "[F]ind [F]iles" })
 keymap("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
@@ -60,11 +61,8 @@ keymap("n", "n", "nzzzv", {})
 keymap("n", "N", "Nzzzv", {})
 
 -- Keymaps for Obsidian:
-keymap('n',"<leader>nn",[[:ObsidianNew<CR>]])
-keymap('n',"<leader>ot",[[:ObsidianTemplate<CR>]])
-keymap('n',"<leader>gn",[[:ObsidianSearch<CR>]],{desc="[G]rep [N]otes"})
-keymap('n',"<leader>oqs",[[:ObsidianQuickSwitch<CR>]])
-keymap('n',"<leader>bl",[[:ObsidianBacklinks<CR>]])
-
-
-
+keymap("n", "<leader>nn", [[:ObsidianNew<CR>]])
+keymap("n", "<leader>ot", [[:ObsidianTemplate<CR>]])
+keymap("n", "<leader>gn", [[:ObsidianSearch<CR>]], { desc = "[G]rep [N]otes" })
+keymap("n", "<leader>oqs", [[:ObsidianQuickSwitch<CR>]])
+keymap("n", "<leader>bl", [[:ObsidianBacklinks<CR>]])
