@@ -29,7 +29,7 @@ vim.opt.conceallevel = 2
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.scrolloff = 15 
+vim.opt.scrolloff = 15
 -- Keep signcolumn on by default
 vim.wo.signcolumn = "yes"
 -- Set the width of tabs and spaces
