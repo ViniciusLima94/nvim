@@ -2,6 +2,7 @@
 -- Navigate between split windows with Cmd+h, j, k, l
 local map = vim.api.nvim_set_keymap
 local keymap = vim.keymap.set
+map("i","jk", "<ESC>", { noremap = false, silent = true })
 map("n", "<C-h>", "<C-W>h", { noremap = true, silent = true })
 map("n", "<C-j>", "<C-W>j", { noremap = true, silent = true })
 map("n", "<C-k>", "<C-W>k", { noremap = true, silent = true })

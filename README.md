@@ -5,7 +5,7 @@ This repository contains my fully customized Neovim configuration.
 ---
 
 # Colorscheme:
-I utilize the catpuccin colorscheme for an appealing visual experience.
+I use the catpuccin colorscheme for an appealing visual experience.
 
 ---
 
