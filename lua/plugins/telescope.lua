@@ -30,7 +30,7 @@ return{
 	    }
 
 	    -- Enable telescope fzf native, if installed
-	    telescope.load_extension('fzf')
+	    -- telescope.load_extension('fzf')
 			telescope.load_extension('noice')
 	        end,
     }
