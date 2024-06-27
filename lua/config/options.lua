@@ -5,7 +5,7 @@ vim.g.maplocalleader = " "
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
--- vim.g.python3_host_prog = '/usr/local/bin/python'
+vim.g.python3_host_prog = '~/virtualenvs/main/bin/python'
 vim.opt.clipboard = "unnamedplus"
 vim.cmd("set relativenumber")
 vim.opt.termguicolors = true

@@ -20,11 +20,11 @@ keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 keymap("n", "<leader>t", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 -- keymap("n", "<leader>e", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
 -- Send the section of code to the terminal
-map("n", "<leader>ss", [[:call jukit#send#section(0)<CR>]], { noremap = true, silent = true })
+map("n", "<leader>sc", ":IPythonCellExecuteCell<CR>", { noremap = true, silent = true })
 --Send the line of code to the terminal
-map("n", "<leader>sa", [[:call jukit#send#line()<CR>]], { noremap = true, silent = true })
+map("n", "<leader>sa", ":IPythonCellExecuteCellJump<CR>", { noremap = true, silent = true })
 --Send the all code  up to the cell to the terminal
-map("v", "<leader>cc", [[:call jukit#send#selection()<cr>]], { noremap = true, silent = true })
+map("n", "<leader>cb", ":IPythonCellInsertBelow<CR>", { noremap = true, silent = true })
 --gitlazy keymap
 map("n", "<Leader>gg", [[:LazyGit<CR>]], { noremap = true, silent = true })
 --telescope
