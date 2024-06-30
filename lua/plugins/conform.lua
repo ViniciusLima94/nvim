@@ -1,14 +1,15 @@
 return {
 	"stevearc/conform.nvim",
-	event = "BufWritePre",
+	event = "bufwritepre",
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				-- markdown= {'mdformat'},				-- Conform will run multiple formatters sequentially
+				-- markdown= {'mdformat'},				-- conform will run multiple formatters sequentially
 				python = { { "isort", "black" } },
-				-- Use a sub-list to run only the first available formatter
-				javascript = { { "prettierd", "prettier" } },
+				nix= { 'alejandra' },
+				-- use a sub-list to run only the first available formatter
+				javascript = { { "prettierd" } },
 			},
 		})
 	end,
