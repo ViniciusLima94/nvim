@@ -3,11 +3,11 @@
 local map = vim.api.nvim_set_keymap
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
-map("i","jk", "<ESC>", { noremap = false, silent = true })
-map("n", "<C-h>", "<C-W>h", { noremap = true, silent = true })
-map("n", "<C-j>", "<C-W>j", { noremap = true, silent = true })
-map("n", "<C-k>", "<C-W>k", { noremap = true, silent = true })
-map("n", "<C-l>", "<C-W>l", { noremap = true, silent = true })
+map("i","jk", "<ESC>", opts)
+map("n", "<C-h>", "<C-W>h", opts)
+map("n", "<C-j>", "<C-W>j", opts)
+map("n", "<C-k>", "<C-W>k", opts)
+map("n", "<C-l>", "<C-W>l", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
@@ -15,22 +15,22 @@ keymap("v", ">", ">gv", opts)
 -- Left Explorer Togglu
 -- keymap("n", "<leader>e", ":Lexplore15<CR>")
 -- Move text up and down
-keymap("n", "<S-j>", ":m .+1<CR>==", { noremap = true, silent = true })
-keymap("n", "<S-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+keymap("n", "<S-j>", ":m .+1<CR>==", opts)
+keymap("n", "<S-k>", ":m .-2<CR>==", opts)
 -- Move block text up and down
-keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
-keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", opts)
 --Keymaps for nvim tree
-keymap("n", "<leader>t", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
 -- keymap("n", "<leader>e", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
 -- Send the section of code to the terminal
-map("n", "<leader>sc", ":IPythonCellExecuteCell<CR>", { noremap = true, silent = true })
+map("n", "<leader>sc", ":IPythonCellExecuteCell<CR>", opts)
 --Send the line of code to the terminal
-map("n", "<leader>sa", ":IPythonCellExecuteCellJump<CR>", { noremap = true, silent = true })
+map("n", "<leader>sa", ":IPythonCellExecuteCellJump<CR>", opts)
 --Send the all code  up to the cell to the terminal
-map("n", "<leader>cb", ":IPythonCellInsertBelow<CR>", { noremap = true, silent = true })
+map("n", "<leader>cb", ":IPythonCellInsertBelow<CR>", opts)
 --gitlazy keymap
-map("n", "<Leader>gg", [[:LazyGit<CR>]], { noremap = true, silent = true })
+map("n", "<Leader>gg", [[:LazyGit<CR>]], opts)
 --telescope
 -- See `:help telescope.builtin`
 keymap("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })

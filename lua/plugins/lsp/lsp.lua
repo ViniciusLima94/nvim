@@ -57,8 +57,6 @@ return {
 				end
 				require("conform").format({ async = true, lsp_fallback = true, range = range })
 			end, { range = true })
-			-- 	vim.lsp.buf.format()
-			-- end, { desc = 'Format current buffer with LSP' })
 		end
 		-- mason-lspconfig requires that these setup functions are called in this order
 		-- before setting up the servers.
