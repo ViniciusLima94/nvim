@@ -28,10 +28,11 @@ vim.opt.smartcase = true
 vim.opt.conceallevel = 2
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-
 vim.opt.scrolloff = 15
 -- Keep signcolumn on by default
 vim.wo.signcolumn = "yes"
 -- Set the width of tabs and spaces
 vim.cmd("set shiftwidth=2") -- Number of spaces per tab
 vim.cmd("set tabstop=2") -- Number of spaces that a <Tab> in the file counts for
+-- Fixing the flickering of the cursor line w
+-- vim.opt.termsync = false
