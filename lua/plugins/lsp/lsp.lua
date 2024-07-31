@@ -3,7 +3,18 @@ return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
 		-- Automatically install LSPs to stdpath for neovim
-		"williamboman/mason.nvim",
+		{
+			"williamboman/mason.nvim",
+			opts = {
+				ensure_installed = {
+					"black",
+					'debugpy',
+					'isort',
+					'ruff',
+					'pyright'
+				}
+			}
+		},
 		"williamboman/mason-lspconfig.nvim",
 		-- Adds LSP completion capabilities
 		"hrsh7th/cmp-nvim-lsp",
@@ -13,11 +24,21 @@ return {
 		{ "j-hui/fidget.nvim", tag = "legacy", opts = {} },
 
 		-- Additional lua configuration, makes nvim stuff amazing!
-		"folke/neodev.nvim",
+		{
+			"folke/lazydev.nvim",
+			ft = "lua",                    -- only load on lua files
+			opts = {
+				library = {
+					-- See the configuration section for more details
+					-- Load luvit types when the `vim.uv` word is found
+					{ path = "luvit-meta/library", words = { "vim%.uv" } },
+				},
+			},
+		}
 	},
 	config = function()
 		-- [[ Configure LSP ]]
-		require("neodev").setup()
+		require("lazy").setup()
 		--  This function gets run when an LSP connects to a particular buffer.
 		local on_attach = function(_, bufnr)
 			-- NOTE: Remember that lua is a real programming language, and as such it is possible
@@ -69,7 +90,7 @@ return {
 			-- rust_analyzer = {},
 			-- tsserver = {},
 			-- html = { filetypes = { 'html', 'twig', 'hbs'} },
-			nil_ls={},
+			nil_ls = {},
 			lua_ls = {
 				Lua = {
 					diagnostics = {
