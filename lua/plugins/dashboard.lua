@@ -1,10 +1,40 @@
-return{
-  'nvimdev/dashboard-nvim',
-  event = 'VimEnter',
-  config = function()
-    require('dashboard').setup {
-      -- config
-    }
-  end,
-  dependencies = { {'nvim-tree/nvim-web-devicons'}}
+return {
+	"nvimdev/dashboard-nvim",
+	event = "VimEnter",
+	config = function()
+		local db = require("dashboard")
+		db.setup({
+			theme = "hyper",
+			config = {
+				week_header = {
+					enable = true,
+				},
+				shortcut = {
+					{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
+					{
+						icon = " ",
+						icon_hl = "@variable",
+						desc = "Files",
+						group = "Label",
+						action = "Telescope find_files",
+						key = "f",
+					},
+					-- {
+					-- 	desc = " Apps",
+					-- 	group = "DiagnosticHint",
+					-- 	action = "Telescope app",
+					-- 	key = "a",
+					-- },
+					{
+						desc = " dotfiles",
+						group = "Number",
+						action = "TelescopeDotfiles",
+						key = "d",
+					},
+				},
+				-- footer={"Stay Hard!"}
+			},
+		})
+	end,
+	dependencies = { { "nvim-tree/nvim-web-devicons" } },
 }

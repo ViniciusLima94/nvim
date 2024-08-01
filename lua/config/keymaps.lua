@@ -2,8 +2,9 @@
 -- Navigate between split windows with Cmd+h, j, k, l
 local map = vim.api.nvim_set_keymap
 local keymap = vim.keymap.set
+local dap = require("dap")
 local opts = { noremap = true, silent = true }
-map("i","jk", "<ESC>", opts)
+map("i", "jk", "<ESC>", opts)
 map("n", "<C-h>", "<C-W>h", opts)
 map("n", "<C-j>", "<C-W>j", opts)
 map("n", "<C-k>", "<C-W>k", opts)
@@ -14,9 +15,13 @@ keymap("v", ">", ">gv", opts)
 -- Generals Keymaps
 -- Left Explorer Togglu
 -- keymap("n", "<leader>e", ":Lexplore15<CR>")
--- Move text up and down
-keymap("n", "<S-j>", ":m .+1<CR>==", opts)
-keymap("n", "<S-k>", ":m .-2<CR>==", opts)
+-- Increase/decrease window width
+keymap("n", "<S-h>", ":vertical resize +5<CR>", opts)
+keymap("n", "<S-l>", ":vertical resize -5<CR>", opts)
+
+-- Increase/decrease window height
+keymap("n", "<S-k>", ":resize +5<CR>", opts)
+keymap("n", "<S-j>", ":resize -5<CR>", opts)
 -- Move block text up and down
 keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", opts)
@@ -43,10 +48,13 @@ keymap(
 	{ desc = "[/] Fuzzily search in current buffer" }
 )
 keymap("n", "<leader>gf", require("telescope.builtin").git_files, { desc = "Search [G]it [F]iles" })
+
 keymap("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "[F]ind [F]iles" })
 keymap("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
 keymap("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
+
 keymap("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
+
 keymap("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "[S]earch [D]iagnostics" })
 keymap("n", "<leader>sr", require("telescope.builtin").resume, { desc = "[S]earch [R]esume" })
 -- Diagnostic keymaps
@@ -56,8 +64,8 @@ keymap("n", "<leader>o", vim.diagnostic.open_float, { desc = "Open floating diag
 keymap("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 -- keymap('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format the code' })
 -- Key mapping to trigger the Format command
-map("x", "<leader>p", '"_dP', { noremap = true, silent = true })
-map("n", "<Leader>f", [[:Format<CR>]], { noremap = true, silent = true })
+map("x", "<leader>p", '"_dP', opts)
+map("n", "<Leader>f", [[:Format<CR>]], opts)
 --keep the cursor centered when scrolling
 keymap("n", "<C-d>", "<C-d>zz", {})
 keymap("n", "<C-u>", "<C-u>zz", {})
@@ -71,3 +79,23 @@ keymap("n", "<leader>ot", [[:ObsidianTemplate<CR>]])
 keymap("n", "<leader>gn", [[:ObsidianSearch<CR>]], { desc = "[G]rep [N]otes" })
 keymap("n", "<leader>oqs", [[:ObsidianQuickSwitch<CR>]])
 keymap("n", "<leader>bl", [[:ObsidianBacklinks<CR>]])
+
+-- Keymaps for debugger:
+keymap("n", "<leader>dc", function()
+	dap.continue()
+end)
+keymap("n", "<F10>", function()
+	dap.step_over()
+end)
+keymap("n", "<F11>", function()
+	dap.step_into()
+end)
+keymap("n", "<F12>", function()
+	dap.step_out()
+end)
+keymap("n", "<Leader>b", function()
+	dap.toggle_breakpoint()
+end)
+keymap("n", "<Leader>B", function()
+	dap.set_breakpoint()
+end)

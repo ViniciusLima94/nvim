@@ -6,10 +6,11 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				-- markdown= {'mdformat'},				-- conform will run multiple formatters sequentially
-				python = { { "flake8","isort", "black" } },
-				nix= { 'alejandra' },
+
+				python = {"ruff","black"},
+				nix = { 'alejandra' },
 				-- use a sub-list to run only the first available formatter
-				javascript = { { "prettierd" } },
+				javascript = { "prettierd" },
 			},
 		})
 	end,
