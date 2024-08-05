@@ -5,7 +5,7 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				-- markdown= {'mdformat'},				-- conform will run multiple formatters sequentially
+				markdown= {"prettierd"},				-- conform will run multiple formatters sequentially
 
 				python = {"ruff","black"},
 				nix = { 'alejandra' },

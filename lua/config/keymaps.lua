@@ -5,16 +5,16 @@ local keymap = vim.keymap.set
 local dap = require("dap")
 local opts = { noremap = true, silent = true }
 map("i", "jk", "<ESC>", opts)
-map("n", "<C-h>", "<C-W>h", opts)
-map("n", "<C-j>", "<C-W>j", opts)
-map("n", "<C-k>", "<C-W>k", opts)
-map("n", "<C-l>", "<C-W>l", opts)
+-- Keymaps for moving between windows
+map("n", "<M-h>", "<C-W>h", opts)
+map("n", "<M-j>", "<C-W>j", opts)
+map("n", "<M-k>", "<C-W>k", opts)
+map("n", "<M-l>", "<C-W>l", opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 -- Generals Keymaps
--- Left Explorer Togglu
--- keymap("n", "<leader>e", ":Lexplore15<CR>")
+
 -- Increase/decrease window width
 keymap("n", "<S-h>", ":vertical resize +5<CR>", opts)
 keymap("n", "<S-l>", ":vertical resize -5<CR>", opts)
@@ -77,8 +77,6 @@ keymap("n", "N", "Nzzzv", {})
 keymap("n", "<leader>nn", [[:ObsidianNew<CR>]])
 keymap("n", "<leader>ot", [[:ObsidianTemplate<CR>]])
 keymap("n", "<leader>gn", [[:ObsidianSearch<CR>]], { desc = "[G]rep [N]otes" })
-keymap("n", "<leader>oqs", [[:ObsidianQuickSwitch<CR>]])
-keymap("n", "<leader>bl", [[:ObsidianBacklinks<CR>]])
 
 -- Keymaps for debugger:
 keymap("n", "<leader>dc", function()
@@ -99,3 +97,6 @@ end)
 keymap("n", "<Leader>B", function()
 	dap.set_breakpoint()
 end)
+
+--Entering in writer mode
+keymap("n", "<leader>p", [[:Pencil|ZenMode<CR>]])

@@ -19,12 +19,12 @@ return {
 						action = "Telescope find_files",
 						key = "f",
 					},
-					-- {
-					-- 	desc = " Apps",
-					-- 	group = "DiagnosticHint",
-					-- 	action = "Telescope app",
-					-- 	key = "a",
-					-- },
+					{
+						desc = " Obsidian",
+						group = "Number",
+						action = "ObsidianToday",
+						key = "o",
+					},
 					{
 						desc = " dotfiles",
 						group = "Number",
