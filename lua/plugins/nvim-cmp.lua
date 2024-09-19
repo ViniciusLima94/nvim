@@ -64,8 +64,9 @@ return {
 				{ name = "buffer" },
 				{ name = "path" },
 				{ name = "pandoc_references" },
+				{ name = "cmp_zotcite" },
 			},
-			experimental= {
+			experimental = {
 				ghost_text = true,
 			},
 		})
