@@ -99,4 +99,4 @@ keymap("n", "<Leader>B", function()
 end)
 
 --Entering in writer mode
-keymap("n", "<leader>p", [[:Pencil|ZenMode<CR>]])
+keymap("n", "<leader>p", [[:Pencil|ZenMode|set spell<CR>]])
