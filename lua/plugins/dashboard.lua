@@ -32,7 +32,7 @@ return {
 						key = "d",
 					},
 				},
-				-- footer={"Stay Hard!"}
+				footer={"Uderstanding is a moral duty."}
 			},
 		})
 	end,
