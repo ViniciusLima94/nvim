@@ -18,7 +18,7 @@ return {
 				"lua",
 				"luadoc",
 				"luap",
-				"latex",
+				-- "latex",
 				"regex",
 				"markdown",
 				"markdown_inline",

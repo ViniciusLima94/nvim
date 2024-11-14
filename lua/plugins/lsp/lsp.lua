@@ -21,7 +21,6 @@ return {
 			ft = "lua", -- only load on lua files
 			opts = {
 				library = {
-					{ plugins = { "nvim-dap-ui" }, types = true },
 					-- See the configuration section for more details
 					-- Load luvit types when the `vim.uv` word is found
 					{ path = "luvit-meta/library", words = { "vim%.uv" } },
@@ -87,7 +86,6 @@ return {
 
 			ensure_installed = {
 				"black",
-				"debugpy",
 				"stylua",
 				"luacheck",
 				"shellcheck",
@@ -102,7 +100,6 @@ return {
 			-- rust_analyzer = {},
 			-- tsserver = {},
 			-- html = { filetypes = { 'html', 'twig', 'hbs'} },
-			nil_ls = {},
 			lua_ls = {
 				Lua = {
 					diagnostics = {

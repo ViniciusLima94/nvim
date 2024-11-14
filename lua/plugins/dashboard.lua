@@ -20,12 +20,6 @@ return {
 						key = "f",
 					},
 					{
-						desc = " Obsidian",
-						group = "Number",
-						action = "ObsidianToday",
-						key = "o",
-					},
-					{
 						desc = " dotfiles",
 						group = "Number",
 						action = "TelescopeDotfiles",

@@ -2,7 +2,6 @@
 -- Navigate between split windows with Cmd+h, j, k, l
 local map = vim.api.nvim_set_keymap
 local keymap = vim.keymap.set
-local dap = require("dap")
 local opts = { noremap = true, silent = true }
 map("i", "jk", "<ESC>", opts)
 -- Keymaps for moving between windows
@@ -72,31 +71,6 @@ keymap("n", "<C-u>", "<C-u>zz", {})
 -- keep the cursor centered when searching
 keymap("n", "n", "nzzzv", {})
 keymap("n", "N", "Nzzzv", {})
-
--- Keymaps for Obsidian:
-keymap("n", "<leader>nn", [[:ObsidianNew<CR>]])
-keymap("n", "<leader>ot", [[:ObsidianTemplate<CR>]])
-keymap("n", "<leader>gn", [[:ObsidianSearch<CR>]], { desc = "[G]rep [N]otes" })
-
--- Keymaps for debugger:
-keymap("n", "<leader>dc", function()
-	dap.continue()
-end)
-keymap("n", "<F10>", function()
-	dap.step_over()
-end)
-keymap("n", "<F11>", function()
-	dap.step_into()
-end)
-keymap("n", "<F12>", function()
-	dap.step_out()
-end)
-keymap("n", "<Leader>b", function()
-	dap.toggle_breakpoint()
-end)
-keymap("n", "<Leader>B", function()
-	dap.set_breakpoint()
-end)
 
 --Entering in writer mode
 keymap("n", "<leader>p", [[:Pencil|ZenMode|set spell<CR>]])
