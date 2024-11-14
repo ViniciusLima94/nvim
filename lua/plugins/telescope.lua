@@ -39,6 +39,6 @@ return {
 		vim.api.nvim_create_user_command("TelescopeDotfiles", find_dotfiles, {})
 		-- Enable telescope fzf native, if installed
 		telescope.load_extension("fzf")
-		telescope.load_extension("noice")
+		-- telescope.load_extension("noice")
 	end,
 }

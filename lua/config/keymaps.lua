@@ -3,42 +3,70 @@
 local map = vim.api.nvim_set_keymap
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
-map("i", "jk", "<ESC>", opts)
+--
 -- Keymaps for moving between windows
 map("n", "<M-h>", "<C-W>h", opts)
-map("n", "<M-j>", "<C-W>j", opts)
+
 map("n", "<M-k>", "<C-W>k", opts)
 map("n", "<M-l>", "<C-W>l", opts)
+
+-- Save and quit keybindings
+map('n', '<C-s>', ':w<CR>', opts)
+map('n', '<C-q>', ':q<CR>', opts)
+
+-- Shortcut to put ; at the end of the line
+map('n', '<leader>;', 'A;<esc>', opts)
+
+-- Include and define shortcuts
+map('n', '<leader>io', 'I#include <stdio.h><CR><esc>', opts)
+map('n', '<leader>lib', 'I#include <stdlib.h><CR><esc>', opts)
+map('n', '<leader>inc', 'I#include', opts)
+map('n', '<leader>def', 'I#define', opts)
+
+-- Additional shortcuts
+map('n', '<leader>%', 'i %>% ', opts)
+map('n', '<leader><', 'A<- ', opts)
+map('n', '<leader>>', 'A->', opts)
+
+-- Select all
+map('n', '<C-A>', 'ggVG', opts)
+
+-- Shortcut to add ::
+map('n', '<leader>:', 'A::', opts)
+
+-- Add single and double comma at the end of the line
+map('n', "<leader>'", "i'<esc>w'<esc>", opts)
+map('n', '<leader>"', 'i"<esc>w"<esc>', opts)
+
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 -- Generals Keymaps
 
 -- Increase/decrease window width
-keymap("n", "<S-h>", ":vertical resize +5<CR>", opts)
-keymap("n", "<S-l>", ":vertical resize -5<CR>", opts)
+map('n', '<C-j>', ':resize +1<CR>', opts)
+map('n', '<C-k>', ':resize -1<CR>', opts)
+map('n', '<C-h>', ':vertical resize -1<CR>', opts)
+map('n', '<C-l>', ':vertical resize +1<CR>', opts)
 
--- Increase/decrease window height
-keymap("n", "<S-k>", ":resize +5<CR>", opts)
-keymap("n", "<S-j>", ":resize -5<CR>", opts)
 -- Move block text up and down
 keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", opts)
+
 --Keymaps for nvim tree
 keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
--- keymap("n", "<leader>e", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
+
 -- Send the section of code to the terminal
 map("n", "<leader>sc", ":IPythonCellExecuteCell<CR>", opts)
 --Send the line of code to the terminal
 map("n", "<leader>sa", ":IPythonCellExecuteCellJump<CR>", opts)
 --Send the all code  up to the cell to the terminal
 map("n", "<leader>cb", ":IPythonCellInsertBelow<CR>", opts)
---gitlazy keymap
-map("n", "<Leader>gg", [[:LazyGit<CR>]], opts)
+
 --telescope
 -- See `:help telescope.builtin`
-keymap("n", "<leader>?", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
-keymap("n", "<leader><space>", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
+keymap("n", "<C-p>", require("telescope.builtin").oldfiles, { desc = "[?] Find recently opened files" })
+keymap("n", "<leader>?", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
 keymap(
 	"n",
 	"<leader>/",
@@ -61,13 +89,15 @@ keymap("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic 
 keymap("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
 keymap("n", "<leader>o", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
 keymap("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
--- keymap('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format the code' })
+
 -- Key mapping to trigger the Format command
 map("x", "<leader>p", '"_dP', opts)
 map("n", "<Leader>f", [[:Format<CR>]], opts)
+
 --keep the cursor centered when scrolling
-keymap("n", "<C-d>", "<C-d>zz", {})
-keymap("n", "<C-u>", "<C-u>zz", {})
+-- keymap("n", "<C-d>", "<C-d>zz", {})
+-- keymap("n", "<C-u>", "<C-u>zz", {})
+
 -- keep the cursor centered when searching
 keymap("n", "n", "nzzzv", {})
 keymap("n", "N", "Nzzzv", {})
