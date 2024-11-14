@@ -56,7 +56,7 @@ return {
 			nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
 			-- See `:help K` for why this keymap
-			nmap("I", vim.lsp.buf.hover, "Hover Documentation")
+			nmap("<M-i>", vim.lsp.buf.hover, "Hover Documentation")
 			nmap("<C-i>", vim.lsp.buf.signature_help, "Signature Documentation")
 			-- Create a command `:Format` local to the LSP buffer
 			vim.api.nvim_create_user_command("Format", function(args)

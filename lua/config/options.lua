@@ -5,7 +5,9 @@ vim.g.maplocalleader = " "
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-vim.g.python3_host_prog = "~/anaconda3/envs/gda/bin/python"
+vim.g.slime_no_buffer_warning = 1
+-- vim.g.python3_host_prog = "~/anaconda3/envs/gda/bin/python"
+vim.g.python3_host_prog = "~/anaconda3/envs/test_env/bin/python3"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "79"
 vim.cmd("set relativenumber")

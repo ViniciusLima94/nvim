@@ -5,6 +5,7 @@
     sudo dpkg -i ripgrep_14.1.0-1_amd64.deb
  - Python >= 3.9
  - ruff: pip install ruff
+ - PyNvim: pip install pynvim
 
  # Neovim Configuration: (for macOS)
 
