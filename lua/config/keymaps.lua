@@ -11,32 +11,32 @@ map("n", "<M-k>", "<C-W>k", opts)
 map("n", "<M-l>", "<C-W>l", opts)
 
 -- Save and quit keybindings
-map('n', '<C-s>', ':w<CR>', opts)
-map('n', '<C-q>', ':q<CR>', opts)
+map("n", "<C-s>", ":w<CR>", opts)
+map("n", "<C-q>", ":q<CR>", opts)
 
 -- Shortcut to put ; at the end of the line
-map('n', '<leader>;', 'A;<esc>', opts)
+map("n", "<leader>;", "A;<esc>", opts)
 
 -- Include and define shortcuts
-map('n', '<leader>io', 'I#include <stdio.h><CR><esc>', opts)
-map('n', '<leader>lib', 'I#include <stdlib.h><CR><esc>', opts)
-map('n', '<leader>inc', 'I#include', opts)
-map('n', '<leader>def', 'I#define', opts)
+map("n", "<leader>io", "I#include <stdio.h><CR><esc>", opts)
+map("n", "<leader>lib", "I#include <stdlib.h><CR><esc>", opts)
+map("n", "<leader>inc", "I#include", opts)
+map("n", "<leader>def", "I#define", opts)
 
 -- Additional shortcuts
-map('n', '<leader>%', 'i %>% ', opts)
-map('n', '<leader><', 'A<- ', opts)
-map('n', '<leader>>', 'A->', opts)
+map("n", "<leader>%", "i %>% ", opts)
+map("n", "<leader><", "A<- ", opts)
+map("n", "<leader>>", "A->", opts)
 
 -- Select all
-map('n', '<C-A>', 'ggVG', opts)
+map("n", "<C-A>", "ggVG", opts)
 
 -- Shortcut to add ::
-map('n', '<leader>:', 'A::', opts)
+map("n", "<leader>:", "A::", opts)
 
 -- Add single and double comma at the end of the line
-map('n', "<leader>'", "i'<esc>w'<esc>", opts)
-map('n', '<leader>"', 'i"<esc>w"<esc>', opts)
+map("n", "<leader>'", "i'<esc>w'<esc>", opts)
+map("n", '<leader>"', 'i"<esc>w"<esc>', opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -44,14 +44,10 @@ keymap("v", ">", ">gv", opts)
 -- Generals Keymaps
 
 -- Increase/decrease window width
-map('n', '<C-j>', ':resize +1<CR>', opts)
-map('n', '<C-k>', ':resize -1<CR>', opts)
-map('n', '<C-h>', ':vertical resize -1<CR>', opts)
-map('n', '<C-l>', ':vertical resize +1<CR>', opts)
-
--- Move block text up and down
-keymap("v", "<S-j>", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "<S-k>", ":m '<-2<CR>gv=gv", opts)
+map("n", "<C-j>", ":resize +1<CR>", opts)
+map("n", "<C-k>", ":resize -1<CR>", opts)
+map("n", "<C-h>", ":vertical resize -1<CR>", opts)
+map("n", "<C-l>", ":vertical resize +1<CR>", opts)
 
 --Keymaps for nvim tree
 keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
