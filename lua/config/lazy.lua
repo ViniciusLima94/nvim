@@ -17,3 +17,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } })
 -- require("lazy").setup("plugins")
+--
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = { "*.js", "*.ts", "*.json", "*.md", "*.yaml" },
+	callback = function()
+		vim.lsp.buf.format({ async = false })
+	end,
+})
